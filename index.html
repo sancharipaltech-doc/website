@@ -150,7 +150,7 @@
     .hero .lead { margin-left: auto; margin-right: auto; }
     .hero .hero-ctas, .hero .stats { justify-content: center; }
     .eyebrow { color: var(--brand); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; margin: 0 0 8px; }
-    .lead { font-size: 1.15rem; color: var(--muted); max-width: 40ch; }
+    .lead { font-size: 1.15rem; color: var(--muted); max-width: 58ch; }
     .hero-ctas { display: flex; flex-wrap: wrap; gap: 12px; margin: 24px 0; }
     /* Photos */
     .photos-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; align-items: start; }
@@ -161,6 +161,7 @@
       background: var(--card);
     }
     .hi { display: block; font-size: .45em; color: var(--muted); font-family: "DM Sans", sans-serif; margin-bottom: 4px; }
+    .creds { list-style: none; padding: 0; margin: -4px 0 18px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-weight: 500; color: var(--brand-dark); font-size: 1rem; }
     .stats { list-style: none; padding: 0; margin: 8px 0 0; display: flex; gap: 24px; flex-wrap: wrap; }
     .stats li { display: flex; flex-direction: column; align-items: center; }
     .stats strong { font-size: 1.5rem; font-family: "DM Serif Display", serif; color: var(--brand); }
@@ -213,6 +214,11 @@
     /* Footer */
     .site-footer { padding: 32px 0; text-align: center; border-top: 1px solid var(--line); }
     .site-footer p { margin: 4px 0; }
+    .socials { display: flex; justify-content: center; gap: 12px; margin-bottom: 14px; }
+    .social { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--brand); text-decoration: none; font-weight: 500; font-size: .95rem; }
+    .social:hover { border-color: var(--brand); }
+    .about-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 18px; font-weight: 700; text-decoration: none; }
+    .about-link:hover { text-decoration: underline; }
 
     /* Sticky mobile CTA */
     .sticky-cta {
@@ -235,6 +241,8 @@
       .sticky-cta { display: none; }
       .nav { display: flex; }
       .hero { padding: 88px 0 72px; }
+      .creds { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 0; }
+      .creds li + li::before { content: "·"; margin: 0 12px; color: var(--accent); font-weight: 700; }
       .photos-grid.has-gallery { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 24px; }
       .photos-grid:not(.has-gallery) .portrait { max-width: 460px; margin: 0 auto; width: 100%; }
       .reels-grid { grid-template-columns: repeat(3, 1fr); }
@@ -265,17 +273,24 @@
     <!-- ===== 1. Intro ===== -->
     <section class="hero">
       <div class="container">
-        <p class="eyebrow">Obstetrician · Gynaecologist · Fertility Consultant</p>
-        <h1><span class="hi">Hi, I'm</span> Dr. Sanchari Pal</h1>
-        <p class="lead">I care for women through every stage — periods, fertility, pregnancy and birth — at my clinic in Mumbai or over a phone call.</p>
+        <p class="eyebrow">Obstetrician · Gynaecologist · Fertility Consultant · Laparoscopic Surgeon</p>
+        <h1>Dr. Sanchari Pal</h1>
+          <ul class="creds">
+          <li>MS (KEM, Mumbai), DNB</li>
+          <li>Fellowship in Minimal Access Surgery (Mumbai)</li>
+          <li>Fellowship in ART</li>
+        </ul>
+        <p class="lead">Holistic women's healthcare: from adolescent health to menopausal care and everything in between including menstrual complaints, fertility planning, high risk pregnancy management, sexual health and hygiene.</p>
         <div class="hero-ctas">
-          <a class="btn" data-topmate href="#" target="_blank" rel="noopener">Book a phone consultation</a>
+          <a class="btn" data-topmate href="#" target="_blank" rel="noopener">Book an online consultation</a>
           <a class="btn btn-ghost" href="#clinic">Visit my clinic</a>
         </div>
         <ul class="stats">
-          <li><strong>7+</strong><span>years experience</span></li>
-          <li><strong>MS, DNB</strong><span>Obstetrics &amp; Gynaecology</span></li>
-          <li><strong>Gold</strong><span>Medallist, MBBS</span></li>
+          <li><strong>2000+</strong><span>Healthy Lives Delivered</span></li>
+          <li><strong>1500+</strong><span>IVF Cycles</span></li>
+          <li><strong>Gold Medallist</strong><span>Gynecologist</span></li>
+          
+          
         </ul>
       </div>
     </section>
@@ -294,13 +309,13 @@
     <section id="about" class="section">
       <div class="container narrow">
         <h2>About me</h2>
-        <p>I'm an obstetrician, gynaecologist and fertility consultant in Mumbai, with over 7 years of clinical and surgical experience. I help women with everything from period problems and fertility to pregnancy, childbirth and minimally invasive gynae surgery.</p>
-        <p>I completed my MBBS as a gold medallist at NRS Medical College, Kolkata, and my MS in Obstetrics &amp; Gynaecology at Seth GS Medical College and KEM Hospital, Mumbai. I also hold the DNB. Today I run my own clinic in Mumbai, consult at Shree IVF Clinic, Ghatkopar, and work with JJ Hospital and Grant Government Medical College. I believe in explaining things clearly, so you understand your options and feel heard at every step.</p>
+        <p>Dr. Sanchari Pal is a renowned gynaecologist with particular focus on high risk obstetrics, complex infertility, and advanced gynaecological endoscopy. She has the experience of delivering over 2000 plus happy lives and helping thousands of women. She is particularly focussed on helping women right from birth through old age with a sharp focus on adolescent gynecology, menopause endocrinology and preventive oncology. </p>
+        <p>She completed her post graduate studies from the prestigious Seth GS Medical College and KEM Hospital, Mumbai and undergraduate from the renowned Nil Ratan Sircar Medical College and Hospital, Kolkata. She holds a gold medal in obstetrics and gynaecology and is the recipient of multiple nationally recognised awards including the DK Tank Prize and the Chuni Lal Mukherjee Award. In 2014, she was awarded ISSN Best Publication of the Year.</p>
+        <p>She is the managing committee member of the coveted Mumbai Obstetric and Gynecological Society, the Indian Menopause Society among others and has active academic contributions throughout the country. Apart from being a qualified gynecologist, she is a strong proponent of women's rights and believes in compassionate women's healthcare across all ages, accessible to all strata of women.</p>
         <ul class="chips">
           <li>MBBS (Gold Medal) · NRS Kolkata</li>
           <li>MS (OBGY) · KEM Mumbai</li>
           <li>DNB</li>
-          <li>Maharashtra Medical Council Reg. No. 8222</li>
         </ul>
       </div>
     </section>
@@ -311,20 +326,21 @@
         <h2>How can I help?</h2>
         <div class="cards">
           <article class="card">
-            <h3>Fertility &amp; IVF</h3>
-            <p>Fertility check-ups and IVF treatment, including egg retrieval, ICSI, frozen embryo transfer, genetic testing of embryos (PGT) and semen preparation.</p>
+            <h3>Pregnancy &amp; Childbirth</h3>
+            <p>Care through your pregnancy and delivery, vaginal birthing including water birthing and C-sections, instrumental delivery including forceps and vacuum assisted, high risk pregnancy, fetal Doppler scans and epidural pain relief.</p>
           </article>
           <article class="card">
-            <h3>Pregnancy &amp; childbirth</h3>
-            <p>Care through your pregnancy and delivery — normal births and C-sections, fetal Doppler scans and epidural pain relief.</p>
+            <h3>Fertility &amp; IVF</h3>
+            <p>Fertility check-ups and natural conception, IUI, IVF/ICSI treatment, including egg freezing, ovarian tissue cortex cryopreservation, embryo freezing, egg retrieval, ICSI, frozen embryo transfer, genetic testing of embryos (PGT) and semen preparation. Legions of experience with regenerative therapies like PRP and stem cells. </p>
           </article>
+         
           <article class="card">
             <h3>Keyhole gynae surgery</h3>
-            <p>Laparoscopy and hysteroscopy for fibroids (myomectomy), ovarian cysts, uterine polyps, septum and adhesions — smaller cuts and faster recovery.</p>
+            <p>Advanced Laparoscopy and hysteroscopy for fibroids (myomectomy), ovarian cysts, endometriosis, fertility enhancing surgeries, uterine polyps, septum and adhesions, smaller cuts and faster recovery. </p>
           </article>
           <article class="card">
             <h3>Periods &amp; women's health</h3>
-            <p>Irregular or painful periods, endometriosis, adolescent gynaecology, and safe, confidential MTP.</p>
+            <p>Irregular or painful periods, endometriosis, adenomyosis, adolescent gynaecology, cervical cancer vaccination, and safe, confidential MTP.</p>
           </article>
         </div>
       </div>
@@ -335,9 +351,9 @@
       <div class="container consult-box">
         <div>
           <h2>Book a telephonic consultation</h2>
-          <p>Fertility questions, pregnancy concerns or period problems — pick a slot that suits you and I'll call you. Booking and payment happen securely on Topmate.</p>
+          <p>Fertility questions, pregnancy concerns or period problems, pick a slot that suits you and I'll call you. Booking and payment happen securely on Topmate.</p>
         </div>
-        <a class="btn btn-large" data-topmate href="#" target="_blank" rel="noopener">Book on Topmate →</a>
+        <a class="btn btn-large" data-topmate href="#" target="_blank" rel="noopener">Book a telephonic consultation →</a>
       </div>
     </section>
 
@@ -395,8 +411,13 @@
       // YOUR POPULAR REELS — easiest way: paste Instagram reel links here, best first.
       // (On Instagram: open the reel → ⋯ / Share → Copy link)
       reels: [
-        // "https://www.instagram.com/reel/XXXXXXXXXXX/",
-        // "https://www.instagram.com/reel/YYYYYYYYYYY/",
+        "https://www.instagram.com/reels/DcoHHI9Ry3l/",
+        "https://www.instagram.com/reel/DVgKy8LDGC0/",
+        "https://www.instagram.com/reel/DU0ba9BjJLE/",
+        "https://www.instagram.com/reel/DUGLnsvDGHL/",
+        "https://www.instagram.com/reel/DT2tPrnjDgU/",
+        "https://www.instagram.com/reel/DUVmyP7DAbC/",
+        "https://www.instagram.com/reel/DVTbOfljFlM/",
       ],
 
       // OPTIONAL — load reels from a Google Sheet instead (used only if the list above is empty).
