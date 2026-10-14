@@ -177,6 +177,25 @@
     .card { background: var(--card); padding: 24px; border-radius: var(--radius); box-shadow: var(--shadow); }
     .card p { margin: 0; color: var(--muted); }
 
+    /* Testimonials */
+    .quotes-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+    .quotes-nav { display: none; gap: 8px; margin-bottom: .5em; }
+    .quotes-nav button { width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--brand); background: transparent; color: var(--brand); font-size: 1.2rem; cursor: pointer; transition: background .2s, color .2s, opacity .2s; }
+    .quotes-nav button:hover:not(:disabled) { background: var(--brand); color: #fff; }
+    .quotes-nav button:disabled { opacity: .3; cursor: default; }
+    .quotes {
+      display: flex; gap: 16px; margin-top: 8px;
+      overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      padding: 16px 16px 28px; margin-left: -16px; margin-right: -16px;  /* lets shadows show and cards bleed to the screen edge */
+      scroll-padding: 0 16px; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .quotes::-webkit-scrollbar { display: none; }
+    .quote { flex: 0 0 85%; scroll-snap-align: start; margin: 0; background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow); padding: 28px 24px 24px; display: flex; flex-direction: column; position: relative; }
+    .quote::before { content: "\201C"; font-family: "DM Serif Display", Georgia, serif; font-size: 4rem; line-height: 1; color: var(--accent); position: absolute; top: 10px; left: 20px; }
+    .quote blockquote { margin: 28px 0 20px; font-size: 1.02rem; color: var(--ink); }
+    .quote figcaption { margin-top: auto; padding-top: 14px; border-top: 1px solid var(--line); font-weight: 700; color: var(--brand); }
+    .quote figcaption span { display: block; font-weight: 400; font-size: .85rem; color: var(--muted); }
+
     /* Consult box */
     .consult-box {
       background: var(--brand); color: #fff; border-radius: 24px;
@@ -232,6 +251,7 @@
     @media (min-width: 720px) {
       .reels-grid { grid-template-columns: repeat(2, 1fr); }
       .gallery { grid-template-columns: repeat(3, 1fr); }
+      .quote { flex-basis: calc((100% - 16px) / 2); }
       .cards { grid-template-columns: repeat(2, 1fr); }
       .consult-box { grid-template-columns: 1fr auto; padding: 40px; }
     }
@@ -247,6 +267,9 @@
       .photos-grid.has-gallery { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 24px; }
       .photos-grid:not(.has-gallery) .portrait { max-width: 460px; margin: 0 auto; width: 100%; }
       .reels-grid { grid-template-columns: repeat(3, 1fr); }
+      .quote { flex-basis: calc((100% - 32px) / 3); }
+      .quotes-nav.scrollable { display: flex; }
+      #about .narrow { max-width: 1000px; }
       .clinic-grid.has-map { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
       .map-wrap iframe { height: 100%; min-height: 340px; }
       .section { padding: 88px 0; }
@@ -262,6 +285,7 @@
       <nav class="nav">
         <a href="#about">About</a>
         <a href="#help">How I help</a>
+        <a href="#testimonials">Testimonials</a>
         <a href="#clinic">Clinic</a>
         <a href="#reels">Instagram</a>
       </nav>
@@ -347,7 +371,41 @@
       </div>
     </section>
 
-    <!-- ===== 5. Phone consultation ===== -->
+    <!-- ===== 5. Testimonials =====
+         To edit: replace the quote text and the name in each <figure>.
+         The line in <span> under the name is optional (e.g. "IVF patient") — delete it if not needed.
+         To add more, copy one whole <figure> … </figure> block — the row scrolls sideways automatically. -->
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="quotes-head">
+          <h2>What my patients say</h2>
+          <div class="quotes-nav" id="quotes-nav">
+            <button type="button" id="quotes-prev" aria-label="Previous testimonials">←</button>
+            <button type="button" id="quotes-next" aria-label="Next testimonials">→</button>
+          </div>
+        </div>
+        <div class="quotes" id="quotes">
+          <figure class="quote">
+            <blockquote>You are not just the best gynaecologist I’ve ever met, but truly a blessing in my life. Forever grateful for your care, kindness, and for being my ray of hope during the toughest times. May God always bless you with endless happiness and good health. ❤️🧿✨</blockquote>
+            <figcaption>Dr. Mansi Sahoo<span>Bhubaneswar, India</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>Dr. Sanchari is a very kind and experienced gynaec surgeon. She explained the problem of irregular periods in simple words and guided us about the treatment options. She was patient, caring, and answered all our questions clearly. We felt comfortable and confident under her care. Highly recommended!</blockquote>
+            <figcaption>Prat M<span>India</span></figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>I had heavy menstrual bleed and dysmenorrhea. Dr Sanchari helped and counselled me through the process and also decreased my anxiety about it . I am currently on treatment for the same and my symtoms have decreased significantly. Thank you</blockquote>
+            <figcaption>Deepika Jain</figcaption>
+          </figure>
+          <figure class="quote">
+            <blockquote>Excellent care and empathetic . Very knowledgeable and passionate about her patient.she makes us comfortable and guide us well and had answered all our queries. Very helpful.</blockquote>
+            <figcaption>Pawan G</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. Phone consultation ===== -->
     <section id="consult" class="section">
       <div class="container consult-box">
         <div>
@@ -358,7 +416,7 @@
       </div>
     </section>
 
-    <!-- ===== 6. Visit me in person (filled in from CONFIG.locations) ===== -->
+    <!-- ===== 7. Visit me in person (filled in from CONFIG.locations) ===== -->
     <section id="clinic" class="section section-tint">
       <div class="container">
         <h2>Visit me in person</h2>
@@ -372,7 +430,7 @@
       </div>
     </section>
 
-    <!-- ===== 7. Instagram (reels from CONFIG.reels or Google Sheet) ===== -->
+    <!-- ===== 8. Instagram (reels from CONFIG.reels or Google Sheet) ===== -->
     <section id="reels" class="section">
       <div class="container">
         <h2>On Instagram</h2>
@@ -491,6 +549,30 @@
         document.getElementById("map-wrap").hidden = false;
         document.getElementById("clinic-grid").classList.add("has-map");
       }
+    })();
+
+    // Testimonials slider: arrow buttons (desktop) + swipe (phones)
+    (function setupQuotes() {
+      const row = document.getElementById("quotes");
+      const nav = document.getElementById("quotes-nav");
+      const prev = document.getElementById("quotes-prev");
+      const next = document.getElementById("quotes-next");
+      if (!row) return;
+      const step = () => {
+        const card = row.querySelector(".quote");
+        return card ? card.getBoundingClientRect().width + 16 : row.clientWidth;
+      };
+      const update = () => {
+        const max = row.scrollWidth - row.clientWidth;
+        nav.classList.toggle("scrollable", max > 4);
+        prev.disabled = row.scrollLeft <= 4;
+        next.disabled = row.scrollLeft >= max - 4;
+      };
+      prev.addEventListener("click", () => row.scrollBy({ left: -step(), behavior: "smooth" }));
+      next.addEventListener("click", () => row.scrollBy({ left: step(), behavior: "smooth" }));
+      row.addEventListener("scroll", update, { passive: true });
+      window.addEventListener("resize", update);
+      update();
     })();
 
     // Photo gallery (hides any photo that's missing)
